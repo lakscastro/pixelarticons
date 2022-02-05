@@ -56,3 +56,16 @@ This means that this tool can't find the latest release of the [pixelarticons](h
 **But this can have several causes**, so the best way to fix that is to first figure out where the icons are located in the original repository and then update the `~/download/download.py` script to fix/cover the breaking changes **if they exists** (this error can also be caused by a simple python exception)
 
 Please fill a issue to see what is going wrong and do not worry: all current releases and versions will be available
+
+<br>
+
+<h2 align="center">
+  Open Source
+</h2>
+<p align="center">
+  <sub>Copyright © 2022-present, Laks Castro.</sub>
+</p>
+<p align="center">Pixel Art Icons Dart Wrapper <a href="https://github.com/LaksCastro/pixelarticons/blob/master/LICENSE">is MIT licensed 💖</a></p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/51419598/152648448-82403d04-c90a-44e7-ae9c-797228864985.png" width="35" />
+</p>
