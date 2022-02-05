@@ -2,6 +2,9 @@ name: pixelarticons
 description: "🍎 Pixel Art Icons made simple for Flutter, powered by pixelarticons and fontify"
 version: 0.1.0
 homepage: https://github.com/lakscastro/pixelarticons
+repository: https://github.com/lakscastro/pixelarticons
+issue_tracker: https://github.com/lakscastro/pixelarticons/issues
+documentation: https://github.com/lakscastro/pixelarticons
 
 environment:
   sdk: ">=2.14.0 <3.0.0"
