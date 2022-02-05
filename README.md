@@ -51,8 +51,6 @@ This flow is powered by GitHub actions, and the triggers are:
 
 ## Breaking Change Exception
 
-What this error means?
-
 This means that this tool can't find the latest release of the [pixelarticons](https://github.com/halfmage/pixelarticons) repository
 
 **But this can have several causes**, so the best way to fix that is to first figure out where the icons are located in the original repository and then update the `~/download/download.py` script to fix/cover the breaking changes **if they exists** (this error can also be caused by a simple python exception)
