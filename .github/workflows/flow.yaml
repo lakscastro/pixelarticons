@@ -1,4 +1,4 @@
-name: Build README.md
+name: Generate Font and Publish
 on:
   push:
     branches:
