@@ -23,8 +23,6 @@
 
 </samp>
 
-
-
 <br />
 
 ## ⚠️ Original author
@@ -101,6 +99,39 @@ This flow is powered by GitHub actions, and the triggers are:
 
 - scheduled: once a month we'll check if new icons are available, if so we'll update the `pub.dev` library otherwise we'll just ignore the possible update
 - manually: if we go to `actions` tab, we can trigger the `flow.yaml` action clicking `run` over the action card (need repo write access)
+
+### How to generate the icons
+
+Environment
+
+```
+Dart SDK version: 2.14.4 (stable)
+Python 3.9.9
+```
+
+Working dir: `~/`
+
+1. Download icons using Python
+
+```
+py download/download.py
+```
+
+2. Generate classes with `fontify`
+
+Add fontify as global dependency
+
+```
+dart pub global activate fontify
+```
+
+Run fontify
+
+```
+dart pub global run fontify
+```
+
+**Done**, you'll see a folder called `~/release` and a font `~/fonts/pixelarticons.otf`, now you can publish or do whatever you want
 
 ## Breaking Change Exception
 
