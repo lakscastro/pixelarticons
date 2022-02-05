@@ -57,8 +57,6 @@ import 'package:pixelarticons/pixelarticons.dart';
 
 `pixelarticons` is the same of `Icons` class but renamed to `Pixel`
 
-You can use by importing:
-
 Be aware:
 
 - **Lower-case for all icons and no separators**, for example `card-plus` is written as `Pixel.cardplus`
