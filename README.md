@@ -111,27 +111,29 @@ Python 3.9.9
 
 Working dir: `~/`
 
-1. Download icons using Python
+**1. Download icons using Python**
 
 ```
 py download/download.py
 ```
 
-2. Generate classes with `fontify`
+**2. Generate classes with `fontify`**
 
-Add fontify as global dependency
+Add `fontify` as global dependency
 
 ```
 dart pub global activate fontify
 ```
 
-Run fontify
+Run `fontify`
 
 ```
 dart pub global run fontify
 ```
 
-**Done**, you'll see a folder called `~/release` and a font `~/fonts/pixelarticons.otf`, now you can publish or do whatever you want
+**Done**, you'll see a folder called `~/release` and a font `~/fonts/pixelarticons.otf`
+
+What you want is the font inside the `~/fonts` folder, the `~/release` folder should be ignored. Now you can publish or do whatever you want!
 
 ## Breaking Change Exception
 
