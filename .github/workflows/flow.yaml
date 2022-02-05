@@ -9,5 +9,7 @@ on:
 
 jobs:
   hello:
+    runs-on: ubuntu-latest
     steps:
-      - echo 'Hi from GH actions'
+      - name: Hello
+        run: echo 'Hi from GH actions'
