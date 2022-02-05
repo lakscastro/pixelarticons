@@ -10,7 +10,7 @@ Be aware:
 - Icons that **starts with non-alpha characters**, like `4k`, `4k-box`, `4g` are prefixed with `k`
 - Icons that are Dart keywords, like `switch` are prefix with `k` as well
 
-So use `k4k`, `4kbox`, `kswitch` instead
+So use `k4k`, `k4kbox`, `kswitch` instead
 
 ```dart
 /// 4k icon:
