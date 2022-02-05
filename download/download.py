@@ -112,7 +112,7 @@ def download_icons():
           dest = os.path.join(root, f'k{file}')
           if os.path.exists(dest):
             os.remove(dest)
-            os.rename(source, dest)
+          os.rename(source, dest)
 
         folder_source = os.path.join(root)
         folder_dest = os.path.join(RELEASE_FOLDER, SVG_FOLDER)
