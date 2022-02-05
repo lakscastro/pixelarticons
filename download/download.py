@@ -64,72 +64,69 @@ latest_release_response = requests.get(LATEST_RELEASE_ENDPOINT)
 
 
 def download(url: str, filename: str, dest_folder: str):
-    if not os.path.exists(dest_folder):
-        os.makedirs(dest_folder)  # create folder if it does not exist
+  if not os.path.exists(dest_folder):
+    os.makedirs(dest_folder)  # create folder if it does not exist
 
-    file_path = os.path.join(dest_folder, filename)
+  file_path = os.path.join(dest_folder, filename)
 
-    file_request = requests.get(url, stream=True)
+  file_request = requests.get(url, stream=True)
 
-    if file_request.ok:
-        with open(file_path, 'wb') as f:
-            for chunk in file_request.iter_content(chunk_size=1024 * 8):
-                if chunk:
-                    f.write(chunk)
-                    f.flush()
-                    os.fsync(f.fileno())
-    else:
-        raise Exception(
-            f'Download failed: Status Code {file_request.status_code} | {file_request.text} | {file_request.json()}')
+  if file_request.ok:
+    with open(file_path, 'wb') as f:
+      for chunk in file_request.iter_content(chunk_size=1024 * 8):
+        if chunk:
+          f.write(chunk)
+          f.flush()
+          os.fsync(f.fileno())
+  else:
+    raise Exception(
+        f'Download failed: Status Code {file_request.status_code} | {file_request.text} | {file_request.json()}')
 
 
 def download_zipball(url: str):
-    return download(url, PIXELARTICONS_ZIPBALL, RELEASE_FOLDER)
+  return download(url, PIXELARTICONS_ZIPBALL, RELEASE_FOLDER)
 
 
 def is_available():
-    return latest_release_response.status_code == 200
+  return latest_release_response.status_code == 200
 
 
 def breaking_change_exception():
-    return Exception(f'{BREAKING_CHANGE_EXCEPTION}\nResponse: {latest_release_response.json()}')
+  return Exception(f'{BREAKING_CHANGE_EXCEPTION}\nResponse: {latest_release_response.json()}')
 
 
 def download_icons():
-    download_zipball(latest_release_response.json()['zipball_url'])
+  download_zipball(latest_release_response.json()['zipball_url'])
 
-    pixelarticons_zip = ZipFile(os.path.join(
-        RELEASE_FOLDER, PIXELARTICONS_ZIPBALL))
+  pixelarticons_zip = ZipFile(os.path.join(RELEASE_FOLDER, PIXELARTICONS_ZIPBALL))
+  extracted_folder = os.path.join(RELEASE_FOLDER, EXTRACTED_FOLDER)
+  pixelarticons_zip.extractall(extracted_folder)
 
-    extracted_folder = os.path.join(RELEASE_FOLDER, EXTRACTED_FOLDER)
+  for root, _, files in os.walk(extracted_folder):
+    if root.endswith('svg'):
+      for file in files:
+        filename = Path(file).stem
 
-    pixelarticons_zip.extractall(extracted_folder)
+        if not re.match('[a-zA-Z]', file) or filename in KEYWORDS:
+          source = os.path.join(root, file)
+          dest = os.path.join(root, f'k{file}')
+          if os.path.exists(dest):
+            os.remove(dest)
+            os.rename(source, dest)
 
-    for root, _, files in os.walk(extracted_folder):
-        if root.endswith('svg'):
-            for file in files:
-                filename = Path(file).stem
+        folder_source = os.path.join(root)
+        folder_dest = os.path.join(RELEASE_FOLDER, SVG_FOLDER)
 
-                if not re.match('[a-zA-Z]', file) or filename in KEYWORDS:
-                    source = os.path.join(root, file)
-                    dest = os.path.join(root, f'k{file}')
-                    if os.path.exists(dest):
-                        os.remove(dest)
-                    os.rename(source, dest)
+        if os.path.exists(folder_dest):
+          shutil.rmtree(folder_dest)
+        os.rename(folder_source, folder_dest)
 
-            folder_source = os.path.join(root)
-            folder_dest = os.path.join(RELEASE_FOLDER, SVG_FOLDER)
+        return True
 
-            if os.path.exists(folder_dest):
-                shutil.rmtree(folder_dest)
-            os.rename(folder_source, folder_dest)
-
-            return True
-
-    raise Exception(UNEXPECTED_ZIP)
+  raise Exception(UNEXPECTED_ZIP)
 
 
 if not is_available():
-    raise breaking_change_exception()
+  raise breaking_change_exception()
 elif download_icons():
-    print('PixelArtIcons Successfully Downloaded to /release/svg folder')
+  print('PixelArtIcons Successfully Downloaded to /release/svg folder')
