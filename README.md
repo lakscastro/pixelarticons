@@ -1,8 +1,63 @@
+<samp>
+  
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/51419598/152648731-567997ec-ac1c-4a9c-a816-a1fb1882abbe.png" width="150">
+</p>
+  
+<samp><h6 align="center">#dart, #flutter, #package, #icons</h6></samp>
+<samp><h1 align="center">Pixel Art Icons</h1></samp>
+
+<h6 align="center"><samp>Dart package to use <a href="https://pixelarticons.com/"><code>pixelarticons</code></a> in Flutter</samp></h6>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Dart-22272E?&style=for-the-badge&logo=dart&logoColor=48C1BB">
+  <img src="https://img.shields.io/badge/Flutter-22272E?style=for-the-badge&logo=flutter&logoColor=54C2F6">
+  <img src="https://img.shields.io/badge/Python-22272E?style=for-the-badge&logo=python&logoColor=326EA0">
+</p>
+  
+<p align="center">
+  <a href="https://pub.dartlang.org/packages/pixelarticons"><img src="https://img.shields.io/pub/v/pixelarticons.svg" /></a>
+</p>
+
+<kbd><img src="https://user-images.githubusercontent.com/51419598/152649069-fa447289-0e7f-4c5e-af4d-bef4c62c71ce.png"></kbd>
+
+</samp>
+
+
+
+<br />
+
+## ⚠️ Original author
+
+**I'm neither the creator or the author** of these icons, **the original author is [@halfmage](https://github.com/halfmage)** on the [pixelarticons](https://github.com/halfmage/pixelarticons)
+
+So, please if you like these icons, **thanks to [@halfmage](https://github.com/halfmage)!** and show support on the original repository!
+
+> ### This package is just an automated tool to generate the font from the svg icons created by [@halfmage](https://github.com/halfmage)
+
 ## How to use
 
-Same as `IconsData`, just rename to `PixelArtIcons`
+### 1. Install the package
 
-You can import the icon data by importing:
+You can also check the on [pub.dev](https://pub.dartlang.org/packages/pixelarticons)
+
+```shell
+flutter pub add pixelarticons
+```
+
+### 2. Import in to the project
+
+Import wherever you want
+
+```dart
+import 'package:pixelarticons/pixelarticons.dart';
+```
+
+### 3. Use as `IconData`
+
+`pixelarticons` is the same of `Icons` class but renamed to `Pixel`
+
+You can use by importing:
 
 Be aware:
 
