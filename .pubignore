@@ -1,0 +1,10 @@
+/svg
+.dart_tool
+.packages
+pubspec.lock
+/release
+/.vscode
+/download
+analysis_options.yaml
+.gitignore
+/.github

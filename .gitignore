@@ -1,0 +1,7 @@
+/svg
+.dart_tool
+.packages
+pubspec.lock
+pixelarticons.otf
+/release
+.vscode
