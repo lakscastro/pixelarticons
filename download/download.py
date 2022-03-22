@@ -34,7 +34,7 @@ please check the 'Breaking Change Exception' section of the README.md of this li
 
 # Critical exception, we need to figure out why the zip folder changed him format
 UNEXPECTED_ZIP = '''
-Expected a zip that looks like:
+Expected a zipball that looks like:
 ```
 .
 `-- pixelarticons-<version>/
@@ -43,7 +43,7 @@ Expected a zip that looks like:
     `-- ...otherreleasefiles.json
 ```
 
-But we got a ZIP that looks like:
+But we got a zipball that looks like:
 ```
 .
 |-- ??????/
