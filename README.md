@@ -33,6 +33,14 @@ So, please if you like these icons, **thanks to [@halfmage](https://github.com/h
 
 > ### This package is just an automated tool to generate the font from the svg icons created by [@halfmage](https://github.com/halfmage)
 
+## Support
+
+If you have ideas to share, bugs to report or need support, you can either open an issue or join our Discord server
+
+<a href="https://discord.gg/86GDERXZNS">
+  <kbd><img src="https://discordapp.com/api/guilds/771498135188799500/widget.png?style=banner2" alt="Discord Banner"/></kbd>
+</a>
+
 ## How to use
 
 ### 1. Install the package
