@@ -147,6 +147,8 @@ Please fill a issue to see what is going wrong and do not worry: all current rel
 
 <br>
 
+<samp>
+
 <h2 align="center">
   Open Source
 </h2>
@@ -157,3 +159,5 @@ Please fill a issue to see what is going wrong and do not worry: all current rel
 <p align="center">
   <img src="https://user-images.githubusercontent.com/51419598/152648448-82403d04-c90a-44e7-ae9c-797228864985.png" width="35" />
 </p>
+  
+</samp>
