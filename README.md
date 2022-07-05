@@ -113,6 +113,12 @@ Python 3.9.9
 
 Working dir: `~/`:
 
+**0. Install `requests` library.**
+
+```
+pip install requests
+```
+
 **1. Download icons using Python.**
 
 ```
