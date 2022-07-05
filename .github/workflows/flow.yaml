@@ -15,6 +15,9 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: Install requests python library
+        run: pip install requests
+
       - name: Download latest release
         run: python3 download/download.py
 
