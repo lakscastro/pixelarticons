@@ -4,12 +4,38 @@ on:
     branches:
       - master
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 1 * *"
 
 jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Hello
-        run: echo 'Hi from GH actions'
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Download latest release
+        run: python3 download/download.py
+
+      - name: Install fontify library
+        run: dart pub global activate fontify
+
+      - name: Run fontify to generate the icons font (.ttf)
+        run: dart pub global run fontify
+
+      - name: Create credentials file
+        run: echo $PUB_CREDENTIALS > ~/pub-credentials.json
+        env:
+          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
+
+      - name: Add credentials to Dart folder
+        run: |
+          mkdir -p ${XDG_CONFIG_HOME:-${HOME:-default}}/dart
+          touch ${XDG_CONFIG_HOME:-${HOME:-default}}/dart/pub-credentials.json
+          cp ~/pub-credentials.json ${XDG_CONFIG_HOME:-${HOME:-default}}/dart/pub-credentials.json
+        env:
+          PUB_CREDENTIALS: ${{ secrets.PUB_CREDENTIALS }}
+
+      - name: Publish
+        run: dart pub publish --force
