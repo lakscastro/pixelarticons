@@ -117,11 +117,11 @@ def download_icons():
         folder_source = os.path.join(root)
         folder_dest = os.path.join(RELEASE_FOLDER, SVG_FOLDER)
 
-        if os.path.exists(folder_dest):
-          shutil.rmtree(folder_dest)
-        os.rename(folder_source, folder_dest)
+      if os.path.exists(folder_dest):
+        shutil.rmtree(folder_dest)
+      os.rename(folder_source, folder_dest)
 
-        return True
+      return True
 
   raise Exception(UNEXPECTED_ZIP)
 
