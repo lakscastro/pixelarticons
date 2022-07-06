@@ -1,12 +1,9 @@
 name: Generate Font and Publish
 on:
-  push:
-    branches:
-      - master
   workflow_dispatch:
 
 jobs:
-  hello:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
