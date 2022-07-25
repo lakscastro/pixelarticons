@@ -84,7 +84,7 @@ As you can see, **I'm not native English speaker**, so this library certainly ha
 
 If you can **improve the tool**, please, feel free to open a issue to discuss, I'll appreciate it!
 
-> Also, if you miss any icon, please ping me on the repository issues or Discord `laks#1712`, I'll take care to verify and trigger the update, thanks!
+> Also, if you miss any icon, please ping me on the repository issues or Discord `rintt#1712`, I'll take care to verify and trigger the update, thanks!
 
 ## Flow
 
@@ -159,9 +159,9 @@ Please fill a issue to see what is going wrong and do not worry: all current rel
   Open Source
 </h2>
 <p align="center">
-  <sub>Copyright © 2022-present, Laks Castro.</sub>
+  <sub>Copyright © 2022-present, Alex Rintt.</sub>
 </p>
-<p align="center">Pixel Art Icons Dart Wrapper <a href="https://github.com/LaksCastro/pixelarticons/blob/master/LICENSE">is MIT licensed 💖</a></p>
+<p align="center">Pixel Art Icons Dart Wrapper <a href="https://github.com/alexrintt/pixelarticons/blob/master/LICENSE">is MIT licensed 💖</a></p>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/51419598/152648448-82403d04-c90a-44e7-ae9c-797228864985.png" width="35" />
 </p>
